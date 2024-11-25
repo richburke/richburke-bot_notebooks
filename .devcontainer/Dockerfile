@@ -5,6 +5,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 RUN python -m pip install ipykernel
 RUN python -m pip install ipywidgets
+RUN python -m pip install ipympl
 RUN python -m pip install numpy
 RUN python -m pip install pandas
 RUN python -m pip install scikit-learn
