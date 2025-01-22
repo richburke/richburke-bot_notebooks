@@ -715,36 +715,25 @@ class RenderUtils:
             "a_minus_b",
         )(cls.__dimensions)
 
-        # cls.__renderer.clear(
-        #     {
-        #         "x": left_margin + a_minus_b - 22,
-        #         "y": top_margin + a - center_b - 14,
-        #         "width": 46,
-        #         "height": 22,
-        #     }
-        # )
-        color = Color.WHITE.value
+        cls.__renderer.clear(
+            {
+                "x": left_margin + a_minus_b - 20,
+                "y": top_margin + a - center_b - 14,
+                "width": 46,
+                "height": 22,
+            }
+        )
+        settings = {
+            "font": "14px serif",
+            "font_color": color,
+        }
+
         label = {
             "text": "[snip]",
             "x": left_margin + a_minus_b - 15,
-            "y": top_margin + a - center_b + 1,
+            "y": top_margin + a - center_b + 2,
         }
-        settings = {
-            "font": "14px serif",
-            "font_color": color,
-        }
-        cls.label(label, settings)
 
-        color = Color.BLACK.value
-        label = {
-            "text": "[snip]",
-            "x": left_margin + a_minus_b - 15 + 2,
-            "y": top_margin + a - center_b + 1 + 2,
-        }
-        settings = {
-            "font": "14px serif",
-            "font_color": color,
-        }
         cls.label(label, settings)
         return cls
 
@@ -769,8 +758,8 @@ class RenderUtils:
         )
         label = {
             "text": "[snip]",
-            "x": left_margin + center_a_minus_b - 14,
-            "y": top_margin + a_minus_b + 3,
+            "x": left_margin + center_a_minus_b - 16,
+            "y": top_margin + a_minus_b + 4,
         }
         settings = {
             "font": "14px serif",
@@ -792,16 +781,16 @@ class RenderUtils:
 
         cls.__renderer.clear(
             {
-                "x": left_margin + a - 22,
+                "x": left_margin + a - 21,
                 "y": top_margin + center_a - 48,
-                "width": 46,
+                "width": 48,
                 "height": 22,
             }
         )
         label = {
             "text": "[paste]",
-            "x": left_margin + a - 18,
-            "y": top_margin + center_a - 33,
+            "x": left_margin + a - 21,
+            "y": top_margin + center_a - 32,
         }
         settings = {
             "font": "14px serif",

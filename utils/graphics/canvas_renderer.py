@@ -181,17 +181,22 @@ class CanvasRenderer:
         existing canvas values.
 
         The properties of the label are "text", "x", and "y". The properties of
-        the settings are "font" and "font_color".
+        the settings are "font", "font_color" and "filter.
         """
-        font, font_color = itemgetter("font", "font_color")(settings)
+        if "filter" not in settings:
+            settings["filter"] = "none"
+        font, font_color, flter = itemgetter("font", "font_color", "filter")(settings)
         text, x, y = itemgetter("text", "x", "y")(label)
 
         original_fill_style = cls.__canvas.fill_style
         original_font = cls.__canvas.font
+        original_filter = cls.__canvas.filter
         cls.__canvas.font = font
         cls.__canvas.fill_style = font_color
+        cls.__canvas.filter = flter
         cls.__canvas.fill_text(text, x, y)
         cls.__canvas.fill_style = original_fill_style
         cls.__canvas.font = original_font
+        cls.__canvas.filter = original_filter
 
         return cls
